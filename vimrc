@@ -19,6 +19,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'tpope/vim-sensible'
+Plugin 'flazz/vim-colorschemes'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
