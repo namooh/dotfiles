@@ -56,6 +56,7 @@ colorscheme jellybeans
 set background=dark
 set number
 set numberwidth=5
+set tabstop=4
 set splitbelow
 set splitright
 
