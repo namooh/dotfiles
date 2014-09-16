@@ -23,6 +23,8 @@ let g:airline#extensions#tabline#enabled = 1
 Plugin 'tpope/vim-sensible'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-scripts/VimClojure'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
@@ -57,6 +59,60 @@ set background=dark
 syntax on 
 set number
 set numberwidth=5
+set shiftwidth=4
+set tabstop=4
+set expandtab
 set splitbelow
 set splitright
 
+set completeopt=menu,preview
+set complete-=t,i
+set colorcolumn=80
+
+autocmd BufEnter * set list
+
+let mapleader = ","
+
+" line movement mappings from http://vim.wikia.com/wiki/Moving_lines_up_or_down
+" Use Alt-j or Alt-k to move lines up or down, respectively
+nnoremap <A-j> :m+<CR>==
+inoremap <A-j> <Esc>:m+<CR>==gi
+vnoremap <A-j> :m'>+<CR>gv=gv
+nnoremap <A-k> :m-2<CR>==
+inoremap <A-k> <Esc>:m-2<CR>==gi
+vnoremap <A-k> :m-2<CR>gv=gv
+
+" Map Ctrl+Backspace in insert mode to delete back a word
+inoremap <C-BS> <C-w>
+
+" Tab configurations for different filetypes --------------------------------
+autocmd BufNewFile,BufEnter *.clj,*.c,*.html,*.js,*.coffee,*.json setlocal shiftwidth=2
+autocmd BufNewFile,BufEnter Makefile,*.php setlocal noexpandtab
+autocmd BufNewFile,BufRead *.pp,Vagrantfile set ft=ruby
+autocmd BufNewFile,BufRead *.edn set filetype=clojure
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.ino set filetype=c
+
+" ctrlp ----------------------------------------------------------------------
+let g:ctrlp_cmd = 'CtrlPLastMode'
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\.git$\|\.hg$\|\.venv$\|env$\|build$\|\.compiled$\|\.awesomo$\|node_modules$\|bower.*$',
+    \ 'file': '\.swp$\|\.pyc$',
+    \ }
+let g:ctrlp_by_filename = 1 " default to filename search instead of full path
+let g:ctrlp_regexp = 1 " default to regexp search
+let g:ctrlp_working_path_mode = 0
+
+" Syntastic ------------------------------------------------------------------
+let g:syntastic_javascript_checkers = ["jslint"]
+let g:syntastic_json_checkers = ["jsonlint"]
+
+" VimClojure -----------------------------------------------------------------
+" notes on setup:
+"http://naleid.com/blog/2011/12/19/getting-a-clojure-repl-in-vim-with-vimclojure-nailgun-and-leiningen/
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
+let g:vimclojure#NailgunClient = "/home/vagrant/bin/ng"
+let g:vimclojure#WantNailgun = 1
+let g:vimclojure#SplitPos = "right"
+let g:vimclojure#SplitSize = 70
