@@ -54,6 +54,7 @@ set t_Co=256
 let g:solarized_termcolors=256
 colorscheme jellybeans
 set background=dark
+syntax on 
 set number
 set numberwidth=5
 set splitbelow
