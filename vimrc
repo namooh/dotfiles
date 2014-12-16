@@ -25,7 +25,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/VimClojure'
-
+Plugin 'tpope/vim-fireplace'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
@@ -114,6 +114,6 @@ let g:syntastic_json_checkers = ["jsonlint"]
 let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#ParenRainbow = 1
 let g:vimclojure#NailgunClient = "/home/vagrant/bin/ng"
-let g:vimclojure#WantNailgun = 1
-let g:vimclojure#SplitPos = "right"
-let g:vimclojure#SplitSize = 70
+let g:vimclojure#WantNailgun = 0
+"let g:vimclojure#SplitPos = "right"
+"let g:vimclojure#SplitSize = 70
