@@ -65,7 +65,7 @@ set tabstop=4
 set expandtab
 set splitbelow
 set splitright
-
+set noswapfile
 set completeopt=menu,preview
 set complete-=t,i
 set colorcolumn=80
