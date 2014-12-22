@@ -107,6 +107,10 @@ let g:ctrlp_working_path_mode = 0
 " Syntastic ------------------------------------------------------------------
 let g:syntastic_javascript_checkers = ["jslint"]
 let g:syntastic_json_checkers = ["jsonlint"]
+let g:syntastic_php_checkers = ["php"]
+
+" NerdTree toggle ------------------------------------------------------------
+nnoremap <F5> :NERDTreeToggle<CR>
 
 " VimClojure -----------------------------------------------------------------
 " notes on setup:
