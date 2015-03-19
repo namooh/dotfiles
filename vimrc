@@ -26,6 +26,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/VimClojure'
 Plugin 'tpope/vim-fireplace'
+Plugin 'chriskempson/base16-vim'
+Plugin 'vim-scripts/CSApprox'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
@@ -55,6 +57,7 @@ filetype plugin indent on    " required
 
 set t_Co=256
 let g:solarized_termcolors=256
+let base16colorspace=256
 set background=dark
 colorscheme jellybeans
 syntax on 
