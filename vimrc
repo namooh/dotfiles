@@ -24,7 +24,9 @@ let g:airline#extensions#tabline#enabled = 1
 Plugin 'tpope/vim-sensible'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-scripts/VimClojure'
+Plugin 'guns/vim-clojure-static'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'guns/vim-clojure-highlight'
 Plugin 'tpope/vim-fireplace'
 Plugin 'chriskempson/base16-vim'
 Plugin 'vim-scripts/CSApprox'
@@ -60,7 +62,7 @@ let g:solarized_termcolors=256
 let base16colorspace=256
 set background=dark
 colorscheme jellybeans
-syntax on 
+syntax on
 set number
 set numberwidth=5
 set shiftwidth=4
@@ -118,9 +120,9 @@ nnoremap <F5> :NERDTreeToggle<CR>
 " VimClojure -----------------------------------------------------------------
 " notes on setup:
 "http://naleid.com/blog/2011/12/19/getting-a-clojure-repl-in-vim-with-vimclojure-nailgun-and-leiningen/
-let g:vimclojure#HighlightBuiltins = 1
-let g:vimclojure#ParenRainbow = 1
-let g:vimclojure#NailgunClient = "/home/vagrant/bin/ng"
-let g:vimclojure#WantNailgun = 0
+"let g:vimclojure#HighlightBuiltins = 1
+"let g:vimclojure#ParenRainbow = 1
+"let g:vimclojure#NailgunClient = "/home/vagrant/bin/ng"
+"let g:vimclojure#WantNailgun = 0
 "let g:vimclojure#SplitPos = "right"
 "let g:vimclojure#SplitSize = 70
