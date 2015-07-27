@@ -57,11 +57,12 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+set gfn=Source\ Code\ Pro\ for\ Powerline:h13
 set t_Co=256
 let g:solarized_termcolors=256
-let base16colorspace=256
+"let base16colorspace=256
 set background=dark
-colorscheme jellybeans
+colorscheme seoul256
 syntax on
 set number
 set numberwidth=5
@@ -81,12 +82,12 @@ let mapleader = ","
 
 " line movement mappings from http://vim.wikia.com/wiki/Moving_lines_up_or_down
 " Use Alt-j or Alt-k to move lines up or down, respectively
-nnoremap <A-j> :m+<CR>==
-inoremap <A-j> <Esc>:m+<CR>==gi
-vnoremap <A-j> :m'>+<CR>gv=gv
-nnoremap <A-k> :m-2<CR>==
-inoremap <A-k> <Esc>:m-2<CR>==gi
-vnoremap <A-k> :m-2<CR>gv=gv
+nnoremap <∆> :m+<CR>==
+inoremap <∆> <Esc>:m+<CR>==gi
+vnoremap <∆> :m'>+<CR>gv=gv
+nnoremap <˚> :m-2<CR>==
+inoremap <˚> <Esc>:m-2<CR>==gi
+vnoremap <˚> :m-2<CR>gv=gv
 
 " Map Ctrl+Backspace in insert mode to delete back a word
 inoremap <C-BS> <C-w>
@@ -116,13 +117,4 @@ let g:syntastic_php_checkers = ["php"]
 
 " NerdTree toggle ------------------------------------------------------------
 nnoremap <F5> :NERDTreeToggle<CR>
-
-" VimClojure -----------------------------------------------------------------
-" notes on setup:
-"http://naleid.com/blog/2011/12/19/getting-a-clojure-repl-in-vim-with-vimclojure-nailgun-and-leiningen/
-"let g:vimclojure#HighlightBuiltins = 1
-"let g:vimclojure#ParenRainbow = 1
-"let g:vimclojure#NailgunClient = "/home/vagrant/bin/ng"
-"let g:vimclojure#WantNailgun = 0
-"let g:vimclojure#SplitPos = "right"
-"let g:vimclojure#SplitSize = 70
+map <F6> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
