@@ -24,12 +24,14 @@ let g:airline#extensions#tabline#enabled = 1
 Plugin 'tpope/vim-sensible'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'guns/vim-clojure-static'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'guns/vim-clojure-highlight'
-Plugin 'tpope/vim-fireplace'
 Plugin 'chriskempson/base16-vim'
-Plugin 'vim-scripts/CSApprox'
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-salve.git'
+Plugin 'tpope/vim-projectionist.git'
+Plugin 'tpope/vim-dispatch.git'
+Plugin 'tpope/vim-fireplace.git'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
@@ -64,7 +66,7 @@ let g:solarized_termcolors=256
 set background=dark
 colorscheme seoul256
 syntax on
-set number
+set relativenumber
 set numberwidth=5
 set shiftwidth=4
 set tabstop=4
@@ -80,21 +82,13 @@ autocmd BufEnter * set list
 
 let mapleader = ","
 
-" line movement mappings from http://vim.wikia.com/wiki/Moving_lines_up_or_down
-" Use Alt-j or Alt-k to move lines up or down, respectively
-nnoremap <∆> :m+<CR>==
-inoremap <∆> <Esc>:m+<CR>==gi
-vnoremap <∆> :m'>+<CR>gv=gv
-nnoremap <˚> :m-2<CR>==
-inoremap <˚> <Esc>:m-2<CR>==gi
-vnoremap <˚> :m-2<CR>gv=gv
-
 " Map Ctrl+Backspace in insert mode to delete back a word
 inoremap <C-BS> <C-w>
 
 " Tab configurations for different filetypes --------------------------------
 autocmd BufNewFile,BufEnter *.clj,*.c,*.html,*.js,*.coffee,*.json setlocal shiftwidth=2
 autocmd BufNewFile,BufEnter Makefile,*.php setlocal noexpandtab
+autocmd BufNewFile,BufEnter *.clj set nowrap
 autocmd BufNewFile,BufRead *.pp,Vagrantfile set ft=ruby
 autocmd BufNewFile,BufRead *.edn set filetype=clojure
 autocmd BufNewFile,BufRead *.md set filetype=markdown
@@ -103,7 +97,7 @@ autocmd BufNewFile,BufRead *.ino set filetype=c
 " ctrlp ----------------------------------------------------------------------
 let g:ctrlp_cmd = 'CtrlPLastMode'
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\.git$\|\.hg$\|\.venv$\|env$\|build$\|\.compiled$\|\.awesomo$\|node_modules$\|bower.*$',
+    \ 'dir': '\.git$\|\.hg$\|\.venv$\|env$\|build$\|target$\|\.compiled$\|\.awesomo$\|node_modules$\|bower.*$',
     \ 'file': '\.swp$\|\.pyc$',
     \ }
 let g:ctrlp_by_filename = 1 " default to filename search instead of full path
@@ -117,4 +111,11 @@ let g:syntastic_php_checkers = ["php"]
 
 " NerdTree toggle ------------------------------------------------------------
 nnoremap <F5> :NERDTreeToggle<CR>
+
+" Background Toggle
 map <F6> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
+" vim-clojure-static ---------------------------------------------------------
+let g:clojure_align_multiline_strings = 0
+let g:clojure_align_subforms = 1
+let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn,fact'
