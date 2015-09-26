@@ -32,6 +32,7 @@ Plugin 'tpope/vim-salve.git'
 Plugin 'tpope/vim-projectionist.git'
 Plugin 'tpope/vim-dispatch.git'
 Plugin 'tpope/vim-fireplace.git'
+Plugin 'ervandew/supertab'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
