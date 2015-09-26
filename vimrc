@@ -33,6 +33,10 @@ Plugin 'tpope/vim-projectionist.git'
 Plugin 'tpope/vim-dispatch.git'
 Plugin 'tpope/vim-fireplace.git'
 Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people.git'
+Plugin 'guns/vim-sexp.git'
+Plugin 'tpope/vim-repeat.git'
+Plugin 'tpope/vim-surround.git'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
