@@ -17,7 +17,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'edkolev/tmuxline.vim'
+"Plugin 'edkolev/tmuxline.vim'
 Plugin 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -72,6 +72,8 @@ set background=dark
 colorscheme seoul256
 syntax on
 set relativenumber
+set nu
+set cursorline
 set numberwidth=5
 set shiftwidth=4
 set tabstop=4
@@ -121,6 +123,11 @@ nnoremap <F5> :NERDTreeToggle<CR>
 map <F6> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 " vim-clojure-static ---------------------------------------------------------
+let g:clojure_fuzzy_indent = 1
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let','^fact']
+let g:clojure_fuzzy_indent_blacklist = ['-fn$','\v^with-%(meta|out-str|loading-context)$']
 let g:clojure_align_multiline_strings = 0
 let g:clojure_align_subforms = 1
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn,fact'
+
+" airline---------------------------------------------------------------------
