@@ -26,7 +26,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'chriskempson/base16-vim'
 Plugin 'guns/vim-clojure-static'
-Plugin 'guns/vim-clojure-highlight'
+"Plugin 'guns/vim-clojure-highlight'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tpope/vim-salve.git'
 Plugin 'tpope/vim-projectionist.git'
@@ -69,7 +69,7 @@ set t_Co=256
 let g:solarized_termcolors=256
 "let base16colorspace=256
 set background=dark
-colorscheme seoul256
+colorscheme apprentice "seoul256
 syntax on
 set relativenumber
 set nu
@@ -121,10 +121,11 @@ nnoremap <F5> :NERDTreeToggle<CR>
 
 " Background Toggle
 map <F6> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+map <F7> :colorscheme apprentice<CR>
 
 " vim-clojure-static ---------------------------------------------------------
 let g:clojure_fuzzy_indent = 1
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let','^fact']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let','^fact','^future-fact','^match']
 let g:clojure_fuzzy_indent_blacklist = ['-fn$','\v^with-%(meta|out-str|loading-context)$']
 let g:clojure_align_multiline_strings = 0
 let g:clojure_align_subforms = 1
