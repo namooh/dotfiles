@@ -1,69 +1,41 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Load vim-plug
+if empty(glob("~/.vim/autoload/plug.vim"))
+    execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+    endif
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-"Plugin 'edkolev/tmuxline.vim'
-Plugin 'bling/vim-airline'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-Plugin 'tpope/vim-sensible'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'chriskempson/base16-vim'
-Plugin 'guns/vim-clojure-static'
-"Plugin 'guns/vim-clojure-highlight'
-Plugin 'kien/rainbow_parentheses.vim'
-"Plugin 'tpope/vim-salve.git'
-"Plugin 'tpope/vim-projectionist.git'
-"Plugin 'tpope/vim-dispatch.git'
-Plugin 'tpope/vim-fireplace.git'
-Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-sexp-mappings-for-regular-people.git'
-Plugin 'guns/vim-sexp.git'
-Plugin 'tpope/vim-repeat.git'
-Plugin 'tpope/vim-surround.git'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+"Plug 'edkolev/tmuxline.vim'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-sensible'
+Plug 'flazz/vim-colorschemes'
+Plug 'airblade/vim-gitgutter'
+Plug 'chriskempson/base16-vim'
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+"Plug 'guns/vim-clojure-highlight'
+Plug 'kien/rainbow_parentheses.vim', { 'for': 'clojure' }
+"Plug 'tpope/vim-salve.git'
+"Plug 'tpope/vim-projectionist.git'
+"Plug 'tpope/vim-dispatch.git'
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
+Plug 'guns/vim-sexp', { 'for': 'clojure' }
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
+call plug#end()
 
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-" Plugin 'user/L9', {'name': 'newL9'}
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
+" Font and appearance
 set gfn=Source\ Code\ Pro\ for\ Powerline:h13
 set t_Co=256
 let g:solarized_termcolors=256
@@ -132,3 +104,5 @@ let g:clojure_align_subforms = 1
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn,fact'
 
 " airline---------------------------------------------------------------------
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
