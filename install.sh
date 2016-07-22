@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
-set -e
+# set -e
 
-mv ~/.emacs ~/.emacs.bak
-mv ~/.emacs.d ~/.emacs.d.bak
-mv ~/.vimrc ~/.vimrc.bak
-mv ~/.vim ~/.vim.bak
-mv ~/.tmuc.conf ~/.tmuc.conf.bak
+mv -v ~/.emacs ~/.emacs.bak
+mv -v ~/.emacs.d ~/.emacs.d.bak
+mv -v ~/.vimrc ~/.vimrc.bak
+mv -v ~/.vim ~/.vim.bak
+mv -v ~/.tmux.conf ~/.tmux.conf.bak
 
-ln -s vimrc ~/.vimrc
-ln -s emacs ~/.emacs
-ln -s emacs.d ~/.emacs.d
-ln -s .vim ~/.vim
-ln -s tmux.conf ~/.tmux.conf
+current_dir=$(pwd)
+
+ln -sv "$current_dir/vimrc" ~/.vimrc
+ln -sv "$current_dir/emacs" ~/.emacs
+ln -sv "$current_dir/emacs.d" ~/.emacs.d
+ln -sv "$current_dir/vim" ~/.vim
+ln -sv "$current_dir/tmux.conf" ~/.tmux.conf
 
 
