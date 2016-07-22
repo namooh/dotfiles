@@ -1,4 +1,12 @@
-vimconfig
+dotfiles
 =========
 
-This is a repository for my Vim configuration.
+Configurations for Vim, emacs, and tmux.
+
+### Installation
+Run
+
+```
+bash install.sh
+```
+
