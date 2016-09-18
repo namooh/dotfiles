@@ -1,0 +1,20 @@
+
+;; ----- smex-history -----
+(
+ package-list-packages
+ package-refresh-contents
+ paredit-mode
+ cider-jack-in
+ cd
+ 5x5
+ arp
+)
+
+;; ----- smex-data -----
+(
+ (package-refresh-contents . 12)
+ (cider-jack-in . 1)
+ (paredit-kill . 2)
+ (paredit-mode . 1)
+ (package-list-packages . 3)
+)

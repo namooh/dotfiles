@@ -10,7 +10,6 @@ mv -v ~/.tmux.conf ~/.tmux.conf.bak
 current_dir=$(pwd)
 
 ln -sv "$current_dir/vimrc" ~/.vimrc
-ln -sv "$current_dir/emacs" ~/.emacs
 ln -sv "$current_dir/emacs.d" ~/.emacs.d
 ln -sv "$current_dir/vim" ~/.vim
 ln -sv "$current_dir/tmux.conf" ~/.tmux.conf
