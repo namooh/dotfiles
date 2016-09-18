@@ -7,11 +7,13 @@ mv -v ~/.vimrc ~/.vimrc.bak
 mv -v ~/.vim ~/.vim.bak
 mv -v ~/.tmux.conf ~/.tmux.conf.bak
 
+mkdir -p ~/.lein
+
 current_dir=$(pwd)
 
 ln -sv "$current_dir/vimrc" ~/.vimrc
 ln -sv "$current_dir/emacs.d" ~/.emacs.d
 ln -sv "$current_dir/vim" ~/.vim
 ln -sv "$current_dir/tmux.conf" ~/.tmux.conf
-
+ln -sv "$current_dir/profiles.clj ~/.lein/profiles.clj
 
